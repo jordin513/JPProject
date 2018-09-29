@@ -1,9 +1,10 @@
+//  Jordin Medina 9/29/2018
+//  An abstract type called Product that will implement the Item interface. Product will implement the basic functionality that all items on a production line should have.
+
+
 import java.util.Date;
 
 public abstract class Product {
-
-//  An abstract type called Product that will implement the Item interface. Product will implement
-//  the basic functionality that all items on a production line should have.
 
   int serialNumber = 0;
 

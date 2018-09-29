@@ -1,3 +1,6 @@
+//  Jordin Medina 9/29/2018
+//  This interface establishes all of the properties that an Item must have
+
 import java.util.Date;
 
 public interface Item {

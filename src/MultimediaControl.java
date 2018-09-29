@@ -1,6 +1,7 @@
-public interface MultimediaControl {
+//  Jordin Medina 9/29/2018
+// All of the items on this production line will have basic media controls.
 
-  // All of the items on this production line will have basic media controls.
+public interface MultimediaControl {
 
   public void play();
 

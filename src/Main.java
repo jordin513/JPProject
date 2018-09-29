@@ -1,4 +1,5 @@
-
+//  Jordin Medina 9/29/2018
+//  This main tests my JP project classes
 
 public class Main {
 

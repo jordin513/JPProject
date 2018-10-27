@@ -4,7 +4,7 @@
 
 import java.util.Date;
 
-public abstract class Product {
+public abstract class Product implements Item, Comparable<Item>{
 
   int serialNumber = 0;
 
@@ -57,4 +57,15 @@ public abstract class Product {
   public int getSerialNumber() {
     return serialNumber;
   }
+
+  //compares based on names
+  @Override
+
+  public int compareTo(Item itm) {
+
+    return name.compareTo(itm.getName());
+
+  }
+
 }
+

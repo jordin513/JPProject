@@ -9,3 +9,14 @@ future production line items. For this particular production facility you will o
 class for music and movie players.
 Your task is to create a flexible structure that could be used in any production line. This structure would
 then allow easy modification to handle different products.`
+
+## Versioning
+
+v3 final release
+v2 beta
+v1 alpha
+
+## Credits
+* Oracle
+* IntelliJ
+* @profvanselow

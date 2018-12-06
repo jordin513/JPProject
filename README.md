@@ -12,9 +12,9 @@ then allow easy modification to handle different products.`
 
 ## Versioning
 
-v3 final release
-v2 beta
-v1 alpha
+* v3 final release
+* v2 beta
+* v1 alpha
 
 ## Credits
 * Oracle

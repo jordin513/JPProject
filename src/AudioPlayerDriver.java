@@ -1,24 +1,20 @@
 //  Jordin Medina 10/24/2018
 //Instantiates AudioPlayer class
 
-public class AudioPlayerDriver {
+class AudioPlayerDriver {
 
-  public static void main(String[] args) {
+  public static void testAudioPlayer() {
+    AudioPlayer audioPlayer = new AudioPlayer("iPod Mini", "MP3");
 
-    AudioPlayer player=new AudioPlayer("myplayer", "myspec");
+    audioPlayer.play();
+    audioPlayer.stop();
+    audioPlayer.next();
+    audioPlayer.previous();
 
-    System.out.println("Created an audio player and calling methods..");
+    System.out.print(audioPlayer);
 
-    System.out.println(player);
+    AudioPlayer audioPlayer1 = new AudioPlayer("Walkman", "WAV");
 
-    player.play();
-
-    player.previous();
-
-    player.next();
-
-    player.stop();
-
+    System.out.println(audioPlayer1);
   }
-
 }

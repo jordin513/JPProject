@@ -1,83 +1,41 @@
 //  Jordin Medina 10/24/2018
 // Multimedia Controller for movies
-public class MoviePlayer extends Product implements MultimediaControl, Comparable<Item>{
+public class MoviePlayer extends Product implements MultimediaControl {
 
   private Screen screen;
+  private MonitorType monitorType;
 
-  private MonitorType montiorType;
-
-  public MoviePlayer(String name)
-
-  {
-
+  MoviePlayer(String name, Screen screen, MonitorType monitorType) {
     super(name);
-
-    screen = new Screen("1024x768", 60, 10);
-
-    montiorType = MonitorType.LCD;
-
-  }
-
-
-
-  public MoviePlayer(String name, Screen screen, MonitorType type)
-
-  {
-
-    super(name);
-
     this.screen = screen;
-
-    this.montiorType = type;
-
+    this.monitorType = monitorType;
   }
 
-
-
   @Override
-
   public void play() {
-
-    System.out.println("Playing");
-
+    System.out.println("Playing movie");
   }
 
   @Override
-
   public void stop() {
-
-    System.out.println("Stopped");
-
+    System.out.println("Stopping movie");
   }
 
   @Override
-
   public void previous() {
-
-    System.out.println("Previous");
-
+    System.out.println("Previous movie");
   }
 
   @Override
-
   public void next() {
-
-    System.out.println("Next");
-
+    System.out.println("Next movie");
   }
 
-  public String toString()
-
-  {
-
-    return super.toString() +"\n" +
-
-        screen.toString() + "\n" +
-
-        "Monitor Type: "+montiorType;
-
+  @Override
+  public String toString() {
+    return
+        super.toString() +
+            "Screen : " + screen +
+            "Monitor Type : " + monitorType + "\n";
   }
-
-
-
 }

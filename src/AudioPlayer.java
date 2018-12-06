@@ -1,10 +1,17 @@
 //  Jordin Medina 9/29/2018
 // Class that plays/stops/skips audio
-public class AudioPlayer extends Product implements MultimediaControl, Comparable<Item> {
+public class AudioPlayer extends Product implements MultimediaControl {
 
+  private String audioSpecifications;
+  private ItemType mediaType;
 
-  String audioSpecification;
-  ItemType mediaType;
+  //Create a constructor that will take in 2 parameters –name and audioSpecification.
+  //The constructor should call its parents constructor and also setup the media type.
+  AudioPlayer(String name, String audioSpecifications) {
+    super(name);
+    mediaType = ItemType.AUDIO;
+    this.audioSpecifications = audioSpecifications;
+  }
 
   @Override
   public void play() {
@@ -22,20 +29,14 @@ public class AudioPlayer extends Product implements MultimediaControl, Comparabl
   }
 
   @Override
-  public String toString() {
-    return super.toString() +
-        "\nAudio Specification : " + audioSpecification +
-        "\nMedia Type : " + mediaType;
-  }
-
-  @Override
   public void next() {
     System.out.println("Next");
   }
 
-  public AudioPlayer(String name, String audioSpecification) {
-    super(name);
-    this.audioSpecification = audioSpecification;
-    mediaType= ItemType.AUDIO;
+  @Override
+  public String toString() {
+    return super.toString() +
+        "Audio Spec : " + audioSpecifications + '\n' +
+        "Type : " + mediaType + '\n';
   }
 }

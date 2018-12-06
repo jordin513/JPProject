@@ -2,46 +2,45 @@
 //  An abstract type called Product that will implement the Item interface. Product will implement the basic functionality that all items on a production line should have.
 
 
+import java.util.ArrayList;
 import java.util.Date;
 
-public abstract class Product implements Item, Comparable<Item>{
+public abstract class Product implements Item, Comparable<Product> {
 
-  int serialNumber = 0;
+  private int serialNumber;
+  private Date manufacturedOn;
+  private String name;
+  private String manufacturer = Item.manufacturer;
 
-  String manufacturer;
+  private static int currentProductionNumber = 1;
 
-  Date manufacuredOn;
+  //  Add a constructor that will take in the name of the product and set this to the field variable name. You
+//  will also assign a serial number from the currentProductionNumber. The currentProductionNumber
+//  should be incremented in readiness for the next instance.
+//  Set manufacturedOn as the current date and time.
+  Product(String name) {
+    this.name = name;
+    serialNumber = currentProductionNumber++;
+    manufacturedOn = new Date();
 
-  String name;
-
-  static int currentProductionNumber;   //This will store the next number to be assigned to serialNumber.
-
-  public Product(
-      String productName) {   //a constructor that will take in the name of the product and set this to the field variable name.
-
-    name = productName;
-
-    manufacturer = "OraclProduction";
-
-    serialNumber = currentProductionNumber++;    //Dodgy code (FindBugs): Write to static field currentProductionNumber from instance method new Product(String)
-
-    manufacuredOn = new Date();
   }
 
-  public String toString() {
-    String statement = "Manufacturer : " + manufacturer
-        + "\nSerial Number : " + serialNumber
-        + "\nDate : " + manufacuredOn
-        + "\nName : " + name;
-    return statement;
+  //method to print an array list that will only print the
+  //type of product given
+  static <T> void printType(ArrayList<T> arrayList, Class c) {
+    for (T element: arrayList){
+      if (element.getClass() == c)
+        System.out.println(element);
+    }
+
+  }
+
+  public void setProductionNumber(int number) {
+    serialNumber = number;
   }
 
   public void setName(String name) {
     this.name = name;
-  }
-
-  public void setProductionNumber(int product) {
-    serialNumber = product;
   }
 
   public String getName() {
@@ -49,23 +48,23 @@ public abstract class Product implements Item, Comparable<Item>{
   }
 
   public Date getManufactureDate() {
-
-    Date rtrn = manufacuredOn;
-    return rtrn;
+    return manufacturedOn;
   }
 
   public int getSerialNumber() {
     return serialNumber;
   }
 
-  //compares based on names
+  public String toString() {
+    return "Manufacturer : " + manufacturer + "\n"
+        + "Serial Number : " + serialNumber + "\n"
+        + "Date : " + manufacturedOn + "\n"
+        + "Name : " + name + "\n";
+  }
+
   @Override
-
-  public int compareTo(Item itm) {
-
-    return name.compareTo(itm.getName());
-
+  public int compareTo(Product product) {
+    return this.name.compareTo(product.name);
   }
 
 }
-

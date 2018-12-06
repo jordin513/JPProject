@@ -4,7 +4,9 @@ public class MoviePlayerDriver {
 
   public static void main(String[] args) {
 
-    MoviePlayer player=new MoviePlayer("The Movie Player");
+    MoviePlayer player=new MoviePlayer("MoviePlayer",
+        new Screen("1080", 144, 1),
+        MonitorType.LCD);
 
     System.out.println("Created a movie player and calling methods..");
 
